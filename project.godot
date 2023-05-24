@@ -8,10 +8,31 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Resource",
+"class": "PartyMember",
+"language": "GDScript",
+"path": "res://Player/PartyMemberTemplate.gd"
+} ]
+_global_script_class_icons={
+"PartyMember": ""
+}
+
 [application]
 
 config/name="PG-project"
+run/main_scene="res://Controllers/GameController.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Party="*res://Player/Party.tscn"
+
+[display]
+
+window/size/width=800
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [gui]
 
