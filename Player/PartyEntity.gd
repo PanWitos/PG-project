@@ -5,6 +5,7 @@ onready var tween = $Tween
 
 export var speed = 6
 
+var paused: bool = false
 var tile_size = 32
 var inputs = {"ui_right": Vector2.RIGHT,
 			"ui_left": Vector2.LEFT,
@@ -16,15 +17,16 @@ func _ready():
 	position += Vector2.ONE * tile_size/2
 	
 func _unhandled_input(event):
-	if tween.is_active():
-		return
-	for dir in inputs.keys():
-		if event.is_action_pressed(dir):
-			move(dir)
-	if event.is_action_pressed("ui_select"):
-		ray.force_raycast_update()
-		if ray.is_colliding():
-			print("elo")
+	if !paused:
+		if tween.is_active():
+			return
+		for dir in inputs.keys():
+			if event.is_action_pressed(dir):
+				move(dir)
+		if event.is_action_pressed("ui_select"):
+			ray.force_raycast_update()
+			if ray.is_colliding() and ray.get_collider().is_in_group("NPC"):
+				SignalBus.emit_signal("dialog_start")
 	
 func move(dir):
 	ray.cast_to = inputs[dir] * tile_size
