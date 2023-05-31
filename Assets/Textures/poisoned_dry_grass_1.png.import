@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/grass-tile.jpg-03349b0642b0132d331c1ce40ca0ce8c.stex"
+path="res://.import/poisoned_dry_grass_1.png-08bbad0f492ab7ef8ccade8e5413f4a5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/grass-tile.jpg"
-dest_files=[ "res://.import/grass-tile.jpg-03349b0642b0132d331c1ce40ca0ce8c.stex" ]
+source_file="res://Assets/Textures/poisoned_dry_grass_1.png"
+dest_files=[ "res://.import/poisoned_dry_grass_1.png-08bbad0f492ab7ef8ccade8e5413f4a5.stex" ]
 
 [params]
 
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
