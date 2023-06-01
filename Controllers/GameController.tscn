@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Controllers/WorldController.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Controllers/GameController.gd" type="Script" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://Assets/UI/border2.png" type="Texture" id=5]
 [ext_resource path="res://Controllers/UIController.gd" type="Script" id=6]
 [ext_resource path="res://Controllers/DialogBox.gd" type="Script" id=7]
+[ext_resource path="res://Assets/UI/item_slot_default_background.png" type="Texture" id=8]
+[ext_resource path="res://Controllers/Slot.gd" type="Script" id=9]
+[ext_resource path="res://InventoryContainer.gd" type="Script" id=10]
+[ext_resource path="res://InventoryController.gd" type="Script" id=11]
 
 [sub_resource type="DynamicFontData" id=1]
 antialiased = false
@@ -16,6 +20,10 @@ font_path = "res://Assets/ARCADECLASSIC.TTF"
 size = 24
 extra_spacing_char = 1
 font_data = SubResource( 1 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 18, 18 )
 
 [node name="GameController" type="Node"]
 script = ExtResource( 2 )
@@ -147,6 +155,266 @@ bbcode_enabled = true
 bbcode_text = "[center]Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis vestibulum nulla, vel euismod erat. Vivamus vestibulum urna vitae ultrices iaculis. Sed sed pharetra nisi. Donec semper luctus sem, in pulvinar turpis luctus non. Donec nisi magna, consectetur vitae dui eget, tincidunt dapibus nunc. Integer at velit id enim blandit ullamcorper at sed lorem. Suspendisse in nulla vitae enim bibendum finibus ac vel neque. Vivamus posuere arcu sit amet mauris fringilla, quis placerat diam lobortis. Phasellus elementum lacus vitae massa pellentesque feugiat.[/center]"
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis vestibulum nulla, vel euismod erat. Vivamus vestibulum urna vitae ultrices iaculis. Sed sed pharetra nisi. Donec semper luctus sem, in pulvinar turpis luctus non. Donec nisi magna, consectetur vitae dui eget, tincidunt dapibus nunc. Integer at velit id enim blandit ullamcorper at sed lorem. Suspendisse in nulla vitae enim bibendum finibus ac vel neque. Vivamus posuere arcu sit amet mauris fringilla, quis placerat diam lobortis. Phasellus elementum lacus vitae massa pellentesque feugiat."
 scroll_active = false
+
+[node name="InventoryContainer" type="ColorRect" parent="UIController"]
+visible = false
+margin_left = 134.0
+margin_top = 37.0
+margin_right = 685.0
+margin_bottom = 408.0
+color = Color( 0.207843, 0.203922, 0.203922, 1 )
+script = ExtResource( 10 )
+
+[node name="GridContainer" type="GridContainer" parent="UIController/InventoryContainer"]
+margin_left = 339.0
+margin_top = 33.0
+margin_right = 533.0
+margin_bottom = 334.0
+custom_constants/vseparation = 2
+custom_constants/hseparation = 2
+columns = 4
+script = ExtResource( 11 )
+
+[node name="Slot1" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+margin_right = 32.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 9 )
+
+[node name="Slot2" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+margin_left = 34.0
+margin_right = 66.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 9 )
+
+[node name="Slot3" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+margin_left = 68.0
+margin_right = 100.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 9 )
+
+[node name="Slot4" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+margin_left = 102.0
+margin_right = 134.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 9 )
+
+[node name="Slot5" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+margin_top = 34.0
+margin_right = 32.0
+margin_bottom = 66.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 9 )
+
+[node name="Slot6" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+margin_left = 34.0
+margin_top = 34.0
+margin_right = 66.0
+margin_bottom = 66.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 9 )
+
+[node name="Slot7" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+margin_left = 68.0
+margin_top = 34.0
+margin_right = 100.0
+margin_bottom = 66.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 9 )
+
+[node name="Slot8" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+margin_left = 102.0
+margin_top = 34.0
+margin_right = 134.0
+margin_bottom = 66.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 9 )
+
+[node name="Slot9" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+margin_top = 68.0
+margin_right = 32.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 9 )
+
+[node name="Slot10" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+margin_left = 34.0
+margin_top = 68.0
+margin_right = 66.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 9 )
+
+[node name="Slot11" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+margin_left = 68.0
+margin_top = 68.0
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 9 )
+
+[node name="Slot12" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+margin_left = 102.0
+margin_top = 68.0
+margin_right = 134.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 9 )
+
+[node name="Slot13" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+margin_top = 102.0
+margin_right = 32.0
+margin_bottom = 134.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 9 )
+
+[node name="Slot14" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+margin_left = 34.0
+margin_top = 102.0
+margin_right = 66.0
+margin_bottom = 134.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 9 )
+
+[node name="Slot15" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+margin_left = 68.0
+margin_top = 102.0
+margin_right = 100.0
+margin_bottom = 134.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 9 )
+
+[node name="Slot16" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+margin_left = 102.0
+margin_top = 102.0
+margin_right = 134.0
+margin_bottom = 134.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 9 )
+
+[node name="Slot17" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+margin_top = 136.0
+margin_right = 32.0
+margin_bottom = 168.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 9 )
+
+[node name="Slot18" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+margin_left = 34.0
+margin_top = 136.0
+margin_right = 66.0
+margin_bottom = 168.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 9 )
+
+[node name="Slot19" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+margin_left = 68.0
+margin_top = 136.0
+margin_right = 100.0
+margin_bottom = 168.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 9 )
+
+[node name="Slot20" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+margin_left = 102.0
+margin_top = 136.0
+margin_right = 134.0
+margin_bottom = 168.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 9 )
+
+[node name="Slot21" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+margin_top = 170.0
+margin_right = 32.0
+margin_bottom = 202.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 9 )
+
+[node name="Slot22" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+margin_left = 34.0
+margin_top = 170.0
+margin_right = 66.0
+margin_bottom = 202.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 9 )
+
+[node name="Slot23" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+margin_left = 68.0
+margin_top = 170.0
+margin_right = 100.0
+margin_bottom = 202.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 9 )
+
+[node name="Slot24" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+margin_left = 102.0
+margin_top = 170.0
+margin_right = 134.0
+margin_bottom = 202.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 9 )
+
+[node name="Slot25" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+margin_top = 204.0
+margin_right = 32.0
+margin_bottom = 236.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 9 )
+
+[node name="Slot26" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+margin_left = 34.0
+margin_top = 204.0
+margin_right = 66.0
+margin_bottom = 236.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 9 )
+
+[node name="Slot27" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+margin_left = 68.0
+margin_top = 204.0
+margin_right = 100.0
+margin_bottom = 236.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 9 )
+
+[node name="Slot28" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+margin_left = 102.0
+margin_top = 204.0
+margin_right = 134.0
+margin_bottom = 236.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 9 )
 
 [node name="BufferTimer" type="Timer" parent="."]
 wait_time = 0.1

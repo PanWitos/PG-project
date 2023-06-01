@@ -7,3 +7,6 @@ func pauseGame():
 
 func unpaudeGame():
 	player.paused = false
+
+func isPaused():
+	return player.paused
