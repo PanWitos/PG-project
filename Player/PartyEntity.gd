@@ -6,7 +6,6 @@ onready var tween = $Tween
 export var speed = 6
 
 var paused: bool = false
-
 var tile_size = 32
 var inputs = {"ui_right": Vector2.RIGHT,
 			"ui_left": Vector2.LEFT,
@@ -41,3 +40,4 @@ func move_tween(dir):
 		position, position + inputs[dir] * tile_size,
 		1.0/speed, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
 	tween.start()
+

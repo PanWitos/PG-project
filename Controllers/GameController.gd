@@ -10,9 +10,6 @@ var inventory: bool = false
 
 func _ready():
 	SignalBus.connect("dialog_start", self, "startDialog")
-
-func isPaused():
-	return worldController.isPaused()
 	
 func openInventory():
 	buffer = true
