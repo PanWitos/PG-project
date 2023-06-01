@@ -3,13 +3,17 @@ extends Node
 onready var uiController = $UIController
 onready var worldController = $UIController/WorldViewport/Viewport/WorldController
 onready var bufferTimer = $BufferTimer
+onready var battleViewport = $UIController/BattleViewport
+onready var battleController = $UIController/BattleViewport/Viewport/BattleController
 
 var dialog: bool = false
 var buffer: bool = false
 var inventory: bool = false
+var battle: bool = false
 
 func _ready():
 	SignalBus.connect("dialog_start", self, "startDialog")
+	SignalBus.connect("battle_start", self, "startBattle")
 	
 func openInventory():
 	buffer = true
@@ -29,7 +33,14 @@ func startDialog():
 	uiController.startDialog()
 	bufferTimer.start()
 	dialog = true
-	
+
+func startBattle():
+	if battle != true:
+		battle = true
+		worldController.pauseGame()
+		battleViewport.visible = true
+		battleController.startBattle()
+
 func endDialog():
 	uiController.endDialog()
 	worldController.unpaudeGame()

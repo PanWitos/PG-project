@@ -10,11 +10,17 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Resource",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://Enemy/EnemyTemplate.gd"
+}, {
+"base": "Resource",
 "class": "PartyMember",
 "language": "GDScript",
 "path": "res://Player/PartyMemberTemplate.gd"
 } ]
 _global_script_class_icons={
+"Enemy": "",
 "PartyMember": ""
 }
 

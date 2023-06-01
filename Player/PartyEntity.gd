@@ -23,14 +23,17 @@ func _unhandled_input(event):
 		for dir in inputs.keys():
 			if event.is_action_pressed(dir):
 				move(dir)
-		if event.is_action_pressed("ui_select"):
-			ray.force_raycast_update()
-			if ray.is_colliding() and ray.get_collider().is_in_group("NPC"):
+		ray.force_raycast_update()
+		if ray.is_colliding():
+			if ray.get_collider().is_in_group("NPC") and event.is_action_pressed("ui_select"):
 				SignalBus.emit_signal("dialog_start")
 	
 func move(dir):
 	ray.cast_to = inputs[dir] * tile_size
 	ray.force_raycast_update()
+	if ray.is_colliding() and ray.get_collider().is_in_group("ENEMY"):
+		print("battle start!")
+		SignalBus.emit_signal("battle_start")
 	if !ray.is_colliding():
 #		position += dir * tile_size
 		move_tween(dir)
