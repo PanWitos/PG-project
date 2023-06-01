@@ -1,3 +1,3 @@
 extends Node
 
-signal dialog_start
+signal dialog_start(text)

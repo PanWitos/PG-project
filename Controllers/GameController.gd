@@ -10,10 +10,10 @@ var buffer: bool = false
 func _ready():
 	SignalBus.connect("dialog_start", self, "startDialog")
 
-func startDialog():
+func startDialog(text):
 	buffer = true
 	worldController.pauseGame()
-	uiController.startDialog()
+	uiController.startDialog(text)
 	bufferTimer.start()
 	dialog = true
 	
