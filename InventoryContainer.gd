@@ -3,6 +3,10 @@ extends ColorRect
 const SlotClass = preload("res://Controllers/Slot.gd")
 onready var gridContainer = $GridContainer
 
+var numRows = 7
+var numCols = 4
+	
+	
 var selectedSlotCol = null
 var selectedSlotRow = null
 var inventorySlots = []
@@ -11,8 +15,7 @@ var inventorySlots = []
 func _ready():
 	visible = false
 
-	var numRows = 7
-	var numCols = 4
+	
 	for row in range(numRows):
 		var rowSlots = []
 		for col in range(numCols):
@@ -35,6 +38,14 @@ func _input(event):
 			selectNewSlot(selectedSlotRow, selectedSlotCol + 1)
 
 func selectNewSlot(row, col):
+	if row < 0:
+		row = numRows-1
+	if row > numRows-1:
+		row = 0
+	if col < 0:
+		col = numCols-1
+	if col > numCols-1:
+		col = 0
 	inventorySlots[selectedSlotRow][selectedSlotCol].unselectSlot()
 	selectSlot(row, col)
 
