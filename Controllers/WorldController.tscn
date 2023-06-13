@@ -78,6 +78,10 @@ position = Vector2( 176, 176 )
 
 [node name="npcCharacter" parent="." instance=ExtResource( 7 )]
 position = Vector2( 304, 80 )
+id = 1
+questId = 1
+firstDialog = "siema eniu"
+secondDialog = "dobry"
 
 [node name="Sprite" parent="npcCharacter" index="0"]
 scale = Vector2( 0.5, 0.5 )
@@ -540,4 +544,18 @@ texture = ExtResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="walls/wall5"]
 shape = SubResource( 4 )
 
+[node name="npcCharacter2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 528, 240 )
+__meta__ = {
+"_edit_group_": true
+}
+id = 2
+firstDialog = "Nie mam nic wiecej do powiedzenia"
+secondDialog = "Dziekuje za przybycie"
+
+[node name="Sprite" parent="npcCharacter2" index="0"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+
 [editable path="npcCharacter"]
+[editable path="npcCharacter2"]

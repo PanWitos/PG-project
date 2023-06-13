@@ -1,26 +1,32 @@
 extends StaticBody2D
 
-export var quest: Resource
-
-export var dialogText: String
-
-var startedQuest = false
-var finishedQuest = false
+export var id: int
+export var questId: int = 0
+var dialogText: String
+export var firstDialog: String
+export var secondDialog: String
 
 func getText():
 	return dialogText
 		
 func interact():
-	if quest != null:
-		if !startedQuest and !finishedQuest:
+	dialogText = firstDialog
+	checkQuest()
+	if questId != 0:
+		if Quests.getQuest(questId) == null:
+			var quest = load("res://Quests/" + String(questId) + ".tres")
+			Quests.addQuest(quest)
 			dialogText = quest.beginText
-			add_to_group("active_quest")
-			startedQuest = true
+		else:
+			dialogText = Quests.getQuest(questId).activeText
+		
+		if Quests.getFinishedQuest(questId) != null:
+			dialogText = Quests.getFinishedQuest(questId).finishedText
 			
-		if startedQuest and !finishedQuest:
-			dialogText = quest.activeText
-			
-		if startedQuest and finishedQuest:
-			remove_from_group("active_quest")
-			dialogText = quest.finishedText
-	getText()
+	return getText()
+
+func checkQuest():
+	var check = Quests.getTarget(id)
+	if check != null:
+		Quests.finishQuest(check.getId())
+		dialogText = secondDialog

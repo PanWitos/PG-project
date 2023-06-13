@@ -7,7 +7,6 @@ extents = Vector2( 16, 16 )
 
 [node name="npcCharacter" type="StaticBody2D" groups=["NPC"]]
 script = ExtResource( 1 )
-dialogText = "Twoj stary"
 
 [node name="Sprite" type="Sprite" parent="."]
 
