@@ -66,3 +66,4 @@ func getDamage():
 func getInitiative():
 	var initiative = statistics["Agility"] * 10 + randi()%7 + 1
 	return initiative
+	

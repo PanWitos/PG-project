@@ -14,6 +14,7 @@ var battle: bool = false
 func _ready():
 	SignalBus.connect("dialog_start", self, "startDialog")
 	SignalBus.connect("battle_start", self, "startBattle")
+	SignalBus.connect("battle_end", self, "endBattle")
 	
 func openInventory():
 	buffer = true
@@ -40,6 +41,13 @@ func startBattle():
 		worldController.pauseGame()
 		battleViewport.visible = true
 		battleController.startBattle()
+		
+func endBattle():
+	if battle:
+		battleController.endBattle()
+		battle = false
+		worldController.unpaudeGame()
+		battleViewport.visible = false
 
 func endDialog():
 	uiController.endDialog()
@@ -51,7 +59,7 @@ func _unhandled_input(event):
 		get_tree().quit()
 	if event.is_action_pressed("ui_select") and dialog and !buffer:
 		endDialog()
-	if event.is_action_pressed("ui_toggle_inventory"):
+	if event.is_action_pressed("ui_toggle_inventory") and !battle:
 		if inventory == true and !buffer:
 			closeInventory()
 		elif inventory == false:

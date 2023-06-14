@@ -553,7 +553,7 @@ texture = ExtResource( 4 )
 shape = SubResource( 4 )
 
 [node name="EnemyTest" type="StaticBody2D" parent="." groups=["ENEMY"]]
-position = Vector2( 496, 240 )
+position = Vector2( 176, 240 )
 __meta__ = {
 "_edit_group_": true
 }

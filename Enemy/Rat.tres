@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-enemyName = ""
+enemyName = "Rat"
 maxHealth = 10
 maxMana = 0
 id = 1
