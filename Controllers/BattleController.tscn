@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Controllers/TurnQueue.gd" type="Script" id=1]
 [ext_resource path="res://Controllers/BattleController.gd" type="Script" id=2]
+[ext_resource path="res://Enemy/EnemyEntity.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Enemy/Rat.tres" type="Resource" id=5]
 
 [node name="BattleController" type="Node"]
 script = ExtResource( 2 )
@@ -14,3 +16,6 @@ zoom = Vector2( 0.5, 0.5 )
 [node name="TurnQueue" type="Node2D" parent="."]
 position = Vector2( 400, 300 )
 script = ExtResource( 1 )
+
+[node name="EnemyEntity" parent="TurnQueue" instance=ExtResource( 4 )]
+statistics = ExtResource( 5 )

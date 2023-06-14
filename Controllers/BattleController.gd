@@ -17,33 +17,11 @@ func startBattle():
 		enemyInstance.position = enemyPositions[i]
 		turnQueue.add_child(enemyInstance)
 	
-	var heroInstance = heroScene.instance()
-	heroInstance.texture = load('res://Player/whatever.png')
-	heroInstance.statistics = load('res://Player/Aragorn.tres')
-	heroInstance.position = heroPositions[0]
-	turnQueue.add_child(heroInstance)
+	for i in 4:
+		var heroInstance = heroScene.instance()
+		heroInstance.texture = load('res://Player/whatever.png')
+		heroInstance.statistics = load('res://Player/Aragorn.tres')
+		heroInstance.position = heroPositions[i]
+		turnQueue.add_child(heroInstance)
 	
-	heroInstance = heroScene.instance()
-	heroInstance.texture = load('res://Player/whatever.png')
-	heroInstance.statistics = load('res://Player/Boromir.tres')
-	heroInstance.position = heroPositions[1]
-	turnQueue.add_child(heroInstance)
-	
-	heroInstance = heroScene.instance()
-	heroInstance.texture = load('res://Player/whatever.png')
-	heroInstance.statistics = load('res://Player/Boromir.tres')
-	heroInstance.position = heroPositions[2]
-	turnQueue.add_child(heroInstance)
-	
-	heroInstance = heroScene.instance()
-	heroInstance.texture = load('res://Player/whatever.png')
-	heroInstance.statistics = load('res://Player/Boromir.tres')
-	heroInstance.position = heroPositions[3]
-	turnQueue.add_child(heroInstance)
-	
-	heroInstance = heroScene.instance()
-	heroInstance.texture = load('res://Player/whatever.png')
-	heroInstance.statistics = load('res://Player/Boromir.tres')
-	heroInstance.position = heroPositions[4]
-	turnQueue.add_child(heroInstance)
-		#turnQueue.add_child(member)
+	turnQueue.initialize()
