@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "PartyMember",
 "language": "GDScript",
 "path": "res://Player/PartyMemberTemplate.gd"
+}, {
+"base": "Node2D",
+"class": "TurnQueue",
+"language": "GDScript",
+"path": "res://Controllers/TurnQueue.gd"
 } ]
 _global_script_class_icons={
 "Enemy": "",
-"PartyMember": ""
+"PartyMember": "",
+"TurnQueue": ""
 }
 
 [application]

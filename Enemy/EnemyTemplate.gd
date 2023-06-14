@@ -12,6 +12,8 @@ var currentHealth: int setget setCurrentHealth, getCurrentHealth
 export var maxMana: int = 0 setget setMaxMana, getMaxMana
 var currentMana: int = 0 setget setCurrentMana, getCurrentMana
 
+export var id: int
+
 export var statistics = {
 	"Strength" : 0,
 	"Accuracy" : 0,
