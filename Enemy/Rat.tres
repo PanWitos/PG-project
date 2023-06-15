@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Enemy/EnemyTemplate.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+enemyName = "Rat"
+maxHealth = 10
+maxMana = 0
+id = 1
+statistics = {
+"Accuracy": 2,
+"Agility": 3,
+"Strength": 2,
+"Vitality": 2,
+"Wisdom": 0
+}

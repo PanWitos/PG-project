@@ -1,10 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Player/Aragorn.tres" type="Resource" id=1]
 [ext_resource path="res://Player/Party.gd" type="Script" id=2]
-[ext_resource path="res://Player/Boromir.tres" type="Resource" id=3]
 
 [node name="Party" type="Node"]
 script = ExtResource( 2 )
-member1 = ExtResource( 1 )
-member2 = ExtResource( 3 )

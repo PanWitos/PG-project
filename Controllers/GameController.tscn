@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Controllers/WorldController.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Controllers/GameController.gd" type="Script" id=2]
@@ -11,6 +11,9 @@
 [ext_resource path="res://Inventory/MenuButton.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Inventory/InventoryContainer.gd" type="Script" id=10]
 [ext_resource path="res://Inventory/PlayerSlot.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/UI/item_slot_default_background.png" type="Texture" id=8]
+[ext_resource path="res://Controllers/Slot.gd" type="Script" id=9]
+[ext_resource path="res://InventoryContainer.gd" type="Script" id=10]
 
 [sub_resource type="DynamicFontData" id=1]
 antialiased = false
@@ -65,10 +68,6 @@ margin_left = 176.0
 margin_top = 44.0
 margin_right = 624.0
 margin_bottom = 556.0
-script = ExtResource( 7 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="LU" type="TextureRect" parent="UIController/DialogBox"]
 margin_left = -9.0
@@ -137,7 +136,7 @@ rect_rotation = 90.0
 texture = ExtResource( 5 )
 stretch_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="UIController/DialogBox"]
+[node name="DialogText" type="RichTextLabel" parent="UIController/DialogBox"]
 anchor_left = 0.143
 anchor_top = 0.133
 anchor_right = 0.857
@@ -391,3 +390,4 @@ wait_time = 0.1
 [editable path="UIController/InventoryContainer/ItemMenuContainer/EquipUnequip"]
 [editable path="UIController/InventoryContainer/ItemMenuContainer/Drop"]
 [editable path="UIController/InventoryContainer/PlayerContainer/Player1"]
+[editable path="UIController/BattleViewport/Viewport/BattleController"]

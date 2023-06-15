@@ -4,10 +4,10 @@
 
 [resource]
 script = ExtResource( 1 )
-characterName = "Aragorn"
+characterName = "Member4"
 maxHealth = 5
 currentHealth = 0
-maxMana = 0
+maxMana = 5
 statistics = {
 "Accuracy": 1,
 "Agility": 1,

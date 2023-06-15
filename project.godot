@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Resource",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://Enemy/EnemyTemplate.gd"
+}, {
+"base": "Resource",
 "class": "PartyMember",
 "language": "GDScript",
 "path": "res://Player/PartyMemberTemplate.gd"
@@ -18,9 +23,21 @@ _global_script_classes=[ {
 "class": "itemTemplate",
 "language": "GDScript",
 "path": "res://Inventory/itemTemplate.gd"
+}, {
+"base": "Node2D",
+"class": "TurnQueue",
+"language": "GDScript",
+"path": "res://Controllers/TurnQueue.gd"
+}, {
+"base": "Resource",
+"class": "questTemplate",
+"language": "GDScript",
+"path": "res://Quests/questTemplate.gd"
 } ]
+
 _global_script_class_icons={
 "PartyMember": "",
+"questTemplate": "",
 "itemTemplate": ""
 }
 
@@ -34,6 +51,11 @@ config/icon="res://icon.png"
 
 Party="*res://Player/Party.tscn"
 SignalBus="*res://SignalBus.tscn"
+
+BattleCommands="*res://Controllers/BattleCommands.tscn"
+
+Quests="*res://Quests/Quests.tscn"
+
 
 [display]
 
@@ -57,6 +79,11 @@ ui_accept={
 ui_toggle_inventory={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":69,"unicode":0,"echo":false,"script":null)
+ ]
+}
+complete={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":67,"unicode":0,"echo":false,"script":null)
  ]
 }
 

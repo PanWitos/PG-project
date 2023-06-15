@@ -1,14 +1,18 @@
 extends Resource
 
-class_name PartyMember
+class_name Enemy
 
-export var characterName: String
+export var enemyName: String
+
+export var texture: Texture
 
 export var maxHealth: int setget setMaxHealth, getMaxHealth
-export var currentHealth: int setget setCurrentHealth, getCurrentHealth
+var currentHealth: int setget setCurrentHealth, getCurrentHealth
 
 export var maxMana: int = 0 setget setMaxMana, getMaxMana
 var currentMana: int = 0 setget setCurrentMana, getCurrentMana
+
+export var id: int
 
 export var statistics = {
 	"Strength" : 0,
@@ -17,12 +21,6 @@ export var statistics = {
 	"Wisdom": 0,
 	"Vitality": 0
 }
-
-export var armor : Resource = null
-export var weapon : Resource = null
-
-export var dead: bool = false
-
 
 enum actions {ATTACK, DEFEND, SKILL}
 
@@ -59,20 +57,13 @@ func getStatistics():
 	return statistics
 	
 func getName():
-	return characterName
+	return enemyName
 
 func getDamage():
 	var damage = statistics["Strength"] * 10
 	return damage
-	
-func getHit(damage):
-	currentHealth -= damage
-	print(currentHealth)
-
-func checkHealth():
-	if currentHealth <= 0:
-		dead = true
 
 func getInitiative():
 	var initiative = statistics["Agility"] * 10 + randi()%7 + 1
 	return statistics["Agility"]
+	
