@@ -30,10 +30,10 @@ func closeInventory():
 	worldController.unpaudeGame()
 	inventory = false
 	
-func startDialog():
+func startDialog(text):
 	buffer = true
 	worldController.pauseGame()
-	uiController.startDialog()
+	uiController.startDialog(text)
 	bufferTimer.start()
 	dialog = true
 

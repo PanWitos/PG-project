@@ -24,9 +24,10 @@ func _unhandled_input(event):
 			if event.is_action_pressed(dir):
 				move(dir)
 		ray.force_raycast_update()
-		if ray.is_colliding():
-			if ray.get_collider().is_in_group("NPC") and event.is_action_pressed("ui_select"):
-				SignalBus.emit_signal("dialog_start")
+		if event.is_action_pressed("ui_select"):
+			ray.force_raycast_update()
+			if ray.is_colliding() and ray.get_collider().is_in_group("NPC"):
+				SignalBus.emit_signal("dialog_start", ray.get_collider().interact())
 	
 func move(dir):
 	ray.cast_to = inputs[dir] * tile_size

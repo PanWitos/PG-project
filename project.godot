@@ -28,6 +28,14 @@ _global_script_class_icons={
 "Enemy": "",
 "PartyMember": "",
 "TurnQueue": ""
+"base": "Resource",
+"class": "questTemplate",
+"language": "GDScript",
+"path": "res://Quests/questTemplate.gd"
+} ]
+_global_script_class_icons={
+"PartyMember": "",
+"questTemplate": ""
 }
 
 [application]
@@ -40,7 +48,11 @@ config/icon="res://icon.png"
 
 Party="*res://Player/Party.tscn"
 SignalBus="*res://SignalBus.tscn"
+
 BattleCommands="*res://Controllers/BattleCommands.tscn"
+
+Quests="*res://Quests/Quests.tscn"
+
 
 [display]
 
