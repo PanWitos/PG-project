@@ -18,6 +18,10 @@ export var statistics = {
 	"Vitality": 0
 }
 
+export var experience = 0
+export var level = 0
+export var experienceRates = [250, 500, 1000, 2000]
+
 export var armor : Resource = null
 export var weapon : Resource = null
 
@@ -72,6 +76,17 @@ func getHit(damage):
 func checkHealth():
 	if currentHealth <= 0:
 		dead = true
+		
+func gainExperience(amount):
+	experience += amount
+	if experience > experienceRates[level]:
+		levelUp()
+
+func levelUp():
+	level += 1
+	for statistic in statistics:
+		statistics[statistic] += 1
+
 
 func getInitiative():
 	var initiative = statistics["Agility"] * 10 + randi()%7 + 1

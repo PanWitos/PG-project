@@ -5,10 +5,10 @@ class_name TurnQueue
 signal resetMenu
 
 var active_character
-
 var fighters
-
 var index = 0
+
+var enemiesToExp = []
 
 func initialize():
 	index = 0
@@ -18,6 +18,9 @@ func initialize():
 		fighter.raise()
 	active_character = get_child(0)
 	index = getFighters(index)
+	var tempEnemy = get_tree().get_nodes_in_group("Enemy")
+	for enemy in tempEnemy:
+		enemiesToExp.append(enemy.statistics.experienceGiven)
 	play_turn()
 	
 func getFighters(newIndex):
@@ -38,7 +41,7 @@ func play_turn():
 	# active_character = get_child(new_index)
 	yield(get_tree().create_timer(0.2), "timeout")
 	if checkBattle() == 0:
-		SignalBus.emit_signal("battle_end")
+		SignalBus.emit_signal("battle_end", enemiesToExp)
 		return
 	index = getFighters(index)
 	play_turn()
