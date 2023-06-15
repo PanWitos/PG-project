@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/battle_bg.png-5a93fb8008209e9fe7a22a63d9f8543c.stex"
+path="res://.import/iron_floor1.png-210fa53332d9f8cb2a867735d9101041.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/battle_bg.png"
-dest_files=[ "res://.import/battle_bg.png-5a93fb8008209e9fe7a22a63d9f8543c.stex" ]
+source_file="res://Assets/Textures/iron_floor1.png"
+dest_files=[ "res://.import/iron_floor1.png-210fa53332d9f8cb2a867735d9101041.stex" ]
 
 [params]
 

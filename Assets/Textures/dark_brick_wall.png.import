@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/battle_bg.png-5a93fb8008209e9fe7a22a63d9f8543c.stex"
+path="res://.import/dark_brick_wall.png-b96345d8aa6a2d7ab36fc290d1f756dc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/battle_bg.png"
-dest_files=[ "res://.import/battle_bg.png-5a93fb8008209e9fe7a22a63d9f8543c.stex" ]
+source_file="res://Assets/Textures/dark_brick_wall.png"
+dest_files=[ "res://.import/dark_brick_wall.png-b96345d8aa6a2d7ab36fc290d1f756dc.stex" ]
 
 [params]
 
