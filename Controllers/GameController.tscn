@@ -7,9 +7,10 @@
 [ext_resource path="res://Assets/UI/border2.png" type="Texture" id=5]
 [ext_resource path="res://Controllers/UIController.gd" type="Script" id=6]
 [ext_resource path="res://Controllers/DialogBox.gd" type="Script" id=7]
-[ext_resource path="res://Assets/UI/item_slot_default_background.png" type="Texture" id=8]
-[ext_resource path="res://Controllers/Slot.gd" type="Script" id=9]
-[ext_resource path="res://InventoryContainer.gd" type="Script" id=10]
+[ext_resource path="res://Inventory/Slot.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Inventory/MenuButton.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Inventory/InventoryContainer.gd" type="Script" id=10]
+[ext_resource path="res://Inventory/PlayerSlot.tscn" type="PackedScene" id=11]
 
 [sub_resource type="DynamicFontData" id=1]
 antialiased = false
@@ -19,10 +20,6 @@ font_path = "res://Assets/ARCADECLASSIC.TTF"
 size = 24
 extra_spacing_char = 1
 font_data = SubResource( 1 )
-
-[sub_resource type="StyleBoxTexture" id=3]
-texture = ExtResource( 8 )
-region_rect = Rect2( 0, 0, 18, 18 )
 
 [node name="GameController" type="Node"]
 script = ExtResource( 2 )
@@ -156,265 +153,241 @@ text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis ve
 scroll_active = false
 
 [node name="InventoryContainer" type="ColorRect" parent="UIController"]
-visible = false
-margin_left = 134.0
+margin_left = 113.0
 margin_top = 37.0
-margin_right = 685.0
+margin_right = 664.0
 margin_bottom = 408.0
 color = Color( 0.207843, 0.203922, 0.203922, 1 )
 script = ExtResource( 10 )
 
-[node name="GridContainer" type="GridContainer" parent="UIController/InventoryContainer"]
-margin_left = 339.0
-margin_top = 33.0
-margin_right = 533.0
-margin_bottom = 334.0
+[node name="InventoryContainer" type="GridContainer" parent="UIController/InventoryContainer"]
+margin_left = 347.0
+margin_top = 27.0
+margin_right = 484.0
+margin_bottom = 265.0
 custom_constants/vseparation = 2
 custom_constants/hseparation = 2
 columns = 4
 
-[node name="Slot1" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
-margin_right = 32.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 32, 32 )
-custom_styles/panel = SubResource( 3 )
-script = ExtResource( 9 )
+[node name="Slot1" parent="UIController/InventoryContainer/InventoryContainer" instance=ExtResource( 8 )]
 
-[node name="Slot2" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+[node name="Slot2" parent="UIController/InventoryContainer/InventoryContainer" instance=ExtResource( 8 )]
 margin_left = 34.0
 margin_right = 66.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 32, 32 )
-custom_styles/panel = SubResource( 3 )
-script = ExtResource( 9 )
 
-[node name="Slot3" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+[node name="Slot3" parent="UIController/InventoryContainer/InventoryContainer" instance=ExtResource( 8 )]
 margin_left = 68.0
 margin_right = 100.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 32, 32 )
-custom_styles/panel = SubResource( 3 )
-script = ExtResource( 9 )
 
-[node name="Slot4" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+[node name="Slot4" parent="UIController/InventoryContainer/InventoryContainer" instance=ExtResource( 8 )]
 margin_left = 102.0
 margin_right = 134.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 32, 32 )
-custom_styles/panel = SubResource( 3 )
-script = ExtResource( 9 )
 
-[node name="Slot5" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+[node name="Slot5" parent="UIController/InventoryContainer/InventoryContainer" instance=ExtResource( 8 )]
 margin_top = 34.0
-margin_right = 32.0
 margin_bottom = 66.0
-rect_min_size = Vector2( 32, 32 )
-custom_styles/panel = SubResource( 3 )
-script = ExtResource( 9 )
 
-[node name="Slot6" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+[node name="Slot6" parent="UIController/InventoryContainer/InventoryContainer" instance=ExtResource( 8 )]
 margin_left = 34.0
 margin_top = 34.0
 margin_right = 66.0
 margin_bottom = 66.0
-rect_min_size = Vector2( 32, 32 )
-custom_styles/panel = SubResource( 3 )
-script = ExtResource( 9 )
 
-[node name="Slot7" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+[node name="Slot7" parent="UIController/InventoryContainer/InventoryContainer" instance=ExtResource( 8 )]
 margin_left = 68.0
 margin_top = 34.0
 margin_right = 100.0
 margin_bottom = 66.0
-rect_min_size = Vector2( 32, 32 )
-custom_styles/panel = SubResource( 3 )
-script = ExtResource( 9 )
 
-[node name="Slot8" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+[node name="Slot8" parent="UIController/InventoryContainer/InventoryContainer" instance=ExtResource( 8 )]
 margin_left = 102.0
 margin_top = 34.0
 margin_right = 134.0
 margin_bottom = 66.0
-rect_min_size = Vector2( 32, 32 )
-custom_styles/panel = SubResource( 3 )
-script = ExtResource( 9 )
 
-[node name="Slot9" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+[node name="Slot9" parent="UIController/InventoryContainer/InventoryContainer" instance=ExtResource( 8 )]
 margin_top = 68.0
-margin_right = 32.0
 margin_bottom = 100.0
-rect_min_size = Vector2( 32, 32 )
-custom_styles/panel = SubResource( 3 )
-script = ExtResource( 9 )
 
-[node name="Slot10" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+[node name="Slot10" parent="UIController/InventoryContainer/InventoryContainer" instance=ExtResource( 8 )]
 margin_left = 34.0
 margin_top = 68.0
 margin_right = 66.0
 margin_bottom = 100.0
-rect_min_size = Vector2( 32, 32 )
-custom_styles/panel = SubResource( 3 )
-script = ExtResource( 9 )
 
-[node name="Slot11" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+[node name="Slot11" parent="UIController/InventoryContainer/InventoryContainer" instance=ExtResource( 8 )]
 margin_left = 68.0
 margin_top = 68.0
 margin_right = 100.0
 margin_bottom = 100.0
-rect_min_size = Vector2( 32, 32 )
-custom_styles/panel = SubResource( 3 )
-script = ExtResource( 9 )
 
-[node name="Slot12" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+[node name="Slot12" parent="UIController/InventoryContainer/InventoryContainer" instance=ExtResource( 8 )]
 margin_left = 102.0
 margin_top = 68.0
 margin_right = 134.0
 margin_bottom = 100.0
-rect_min_size = Vector2( 32, 32 )
-custom_styles/panel = SubResource( 3 )
-script = ExtResource( 9 )
 
-[node name="Slot13" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+[node name="Slot13" parent="UIController/InventoryContainer/InventoryContainer" instance=ExtResource( 8 )]
 margin_top = 102.0
-margin_right = 32.0
 margin_bottom = 134.0
-rect_min_size = Vector2( 32, 32 )
-custom_styles/panel = SubResource( 3 )
-script = ExtResource( 9 )
 
-[node name="Slot14" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+[node name="Slot14" parent="UIController/InventoryContainer/InventoryContainer" instance=ExtResource( 8 )]
 margin_left = 34.0
 margin_top = 102.0
 margin_right = 66.0
 margin_bottom = 134.0
-rect_min_size = Vector2( 32, 32 )
-custom_styles/panel = SubResource( 3 )
-script = ExtResource( 9 )
 
-[node name="Slot15" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+[node name="Slot15" parent="UIController/InventoryContainer/InventoryContainer" instance=ExtResource( 8 )]
 margin_left = 68.0
 margin_top = 102.0
 margin_right = 100.0
 margin_bottom = 134.0
-rect_min_size = Vector2( 32, 32 )
-custom_styles/panel = SubResource( 3 )
-script = ExtResource( 9 )
 
-[node name="Slot16" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+[node name="Slot16" parent="UIController/InventoryContainer/InventoryContainer" instance=ExtResource( 8 )]
 margin_left = 102.0
 margin_top = 102.0
 margin_right = 134.0
 margin_bottom = 134.0
-rect_min_size = Vector2( 32, 32 )
-custom_styles/panel = SubResource( 3 )
-script = ExtResource( 9 )
 
-[node name="Slot17" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+[node name="Slot17" parent="UIController/InventoryContainer/InventoryContainer" instance=ExtResource( 8 )]
 margin_top = 136.0
-margin_right = 32.0
 margin_bottom = 168.0
-rect_min_size = Vector2( 32, 32 )
-custom_styles/panel = SubResource( 3 )
-script = ExtResource( 9 )
 
-[node name="Slot18" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+[node name="Slot18" parent="UIController/InventoryContainer/InventoryContainer" instance=ExtResource( 8 )]
 margin_left = 34.0
 margin_top = 136.0
 margin_right = 66.0
 margin_bottom = 168.0
-rect_min_size = Vector2( 32, 32 )
-custom_styles/panel = SubResource( 3 )
-script = ExtResource( 9 )
 
-[node name="Slot19" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+[node name="Slot19" parent="UIController/InventoryContainer/InventoryContainer" instance=ExtResource( 8 )]
 margin_left = 68.0
 margin_top = 136.0
 margin_right = 100.0
 margin_bottom = 168.0
-rect_min_size = Vector2( 32, 32 )
-custom_styles/panel = SubResource( 3 )
-script = ExtResource( 9 )
 
-[node name="Slot20" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+[node name="Slot20" parent="UIController/InventoryContainer/InventoryContainer" instance=ExtResource( 8 )]
 margin_left = 102.0
 margin_top = 136.0
 margin_right = 134.0
 margin_bottom = 168.0
-rect_min_size = Vector2( 32, 32 )
-custom_styles/panel = SubResource( 3 )
-script = ExtResource( 9 )
 
-[node name="Slot21" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+[node name="Slot21" parent="UIController/InventoryContainer/InventoryContainer" instance=ExtResource( 8 )]
 margin_top = 170.0
-margin_right = 32.0
 margin_bottom = 202.0
-rect_min_size = Vector2( 32, 32 )
-custom_styles/panel = SubResource( 3 )
-script = ExtResource( 9 )
 
-[node name="Slot22" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+[node name="Slot22" parent="UIController/InventoryContainer/InventoryContainer" instance=ExtResource( 8 )]
 margin_left = 34.0
 margin_top = 170.0
 margin_right = 66.0
 margin_bottom = 202.0
-rect_min_size = Vector2( 32, 32 )
-custom_styles/panel = SubResource( 3 )
-script = ExtResource( 9 )
 
-[node name="Slot23" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+[node name="Slot23" parent="UIController/InventoryContainer/InventoryContainer" instance=ExtResource( 8 )]
 margin_left = 68.0
 margin_top = 170.0
 margin_right = 100.0
 margin_bottom = 202.0
-rect_min_size = Vector2( 32, 32 )
-custom_styles/panel = SubResource( 3 )
-script = ExtResource( 9 )
 
-[node name="Slot24" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+[node name="Slot24" parent="UIController/InventoryContainer/InventoryContainer" instance=ExtResource( 8 )]
 margin_left = 102.0
 margin_top = 170.0
 margin_right = 134.0
 margin_bottom = 202.0
-rect_min_size = Vector2( 32, 32 )
-custom_styles/panel = SubResource( 3 )
-script = ExtResource( 9 )
 
-[node name="Slot25" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+[node name="Slot25" parent="UIController/InventoryContainer/InventoryContainer" instance=ExtResource( 8 )]
 margin_top = 204.0
-margin_right = 32.0
 margin_bottom = 236.0
-rect_min_size = Vector2( 32, 32 )
-custom_styles/panel = SubResource( 3 )
-script = ExtResource( 9 )
 
-[node name="Slot26" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+[node name="Slot26" parent="UIController/InventoryContainer/InventoryContainer" instance=ExtResource( 8 )]
 margin_left = 34.0
 margin_top = 204.0
 margin_right = 66.0
 margin_bottom = 236.0
-rect_min_size = Vector2( 32, 32 )
-custom_styles/panel = SubResource( 3 )
-script = ExtResource( 9 )
 
-[node name="Slot27" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+[node name="Slot27" parent="UIController/InventoryContainer/InventoryContainer" instance=ExtResource( 8 )]
 margin_left = 68.0
 margin_top = 204.0
 margin_right = 100.0
 margin_bottom = 236.0
-rect_min_size = Vector2( 32, 32 )
-custom_styles/panel = SubResource( 3 )
-script = ExtResource( 9 )
 
-[node name="Slot28" type="Panel" parent="UIController/InventoryContainer/GridContainer"]
+[node name="Slot28" parent="UIController/InventoryContainer/InventoryContainer" instance=ExtResource( 8 )]
 margin_left = 102.0
 margin_top = 204.0
 margin_right = 134.0
 margin_bottom = 236.0
-rect_min_size = Vector2( 32, 32 )
-custom_styles/panel = SubResource( 3 )
-script = ExtResource( 9 )
+
+[node name="ItemMenuContainer" type="GridContainer" parent="UIController/InventoryContainer"]
+margin_left = 347.0
+margin_top = 276.0
+margin_right = 484.0
+margin_bottom = 342.0
+custom_constants/vseparation = 2
+custom_constants/hseparation = 2
+columns = 2
+
+[node name="Use" parent="UIController/InventoryContainer/ItemMenuContainer" instance=ExtResource( 9 )]
+
+[node name="RichTextLabel" parent="UIController/InventoryContainer/ItemMenuContainer/Use" index="0"]
+bbcode_text = "[center]use"
+text = "use"
+
+[node name="Move" parent="UIController/InventoryContainer/ItemMenuContainer" instance=ExtResource( 9 )]
+margin_left = 68.0
+margin_right = 134.0
+
+[node name="RichTextLabel" parent="UIController/InventoryContainer/ItemMenuContainer/Move" index="0"]
+bbcode_text = "[center]equip"
+text = "equip"
+
+[node name="EquipUnequip" parent="UIController/InventoryContainer/ItemMenuContainer" instance=ExtResource( 9 )]
+margin_top = 34.0
+margin_bottom = 66.0
+
+[node name="RichTextLabel" parent="UIController/InventoryContainer/ItemMenuContainer/EquipUnequip" index="0"]
+bbcode_text = "[center]destroy"
+text = "destroy"
+
+[node name="Drop" parent="UIController/InventoryContainer/ItemMenuContainer" instance=ExtResource( 9 )]
+margin_left = 68.0
+margin_top = 34.0
+margin_right = 134.0
+margin_bottom = 66.0
+
+[node name="RichTextLabel" parent="UIController/InventoryContainer/ItemMenuContainer/Drop" index="0"]
+bbcode_text = "[center]move"
+text = "move"
+
+[node name="PlayerContainer" type="GridContainer" parent="UIController/InventoryContainer"]
+margin_left = 61.0
+margin_top = 23.0
+margin_right = 365.0
+margin_bottom = 387.0
+custom_constants/vseparation = 4
+custom_constants/hseparation = 4
+columns = 2
+
+[node name="Player1" parent="UIController/InventoryContainer/PlayerContainer" instance=ExtResource( 11 )]
+
+[node name="Player2" parent="UIController/InventoryContainer/PlayerContainer" instance=ExtResource( 11 )]
+margin_left = 134.0
+margin_right = 264.0
+
+[node name="Player3" parent="UIController/InventoryContainer/PlayerContainer" instance=ExtResource( 11 )]
+margin_top = 164.0
+margin_bottom = 324.0
+
+[node name="Player4" parent="UIController/InventoryContainer/PlayerContainer" instance=ExtResource( 11 )]
+margin_left = 134.0
+margin_top = 164.0
+margin_right = 264.0
+margin_bottom = 324.0
 
 [node name="BufferTimer" type="Timer" parent="."]
 wait_time = 0.1
 
 [connection signal="timeout" from="BufferTimer" to="." method="_on_BufferTimer_timeout"]
+
+[editable path="UIController/InventoryContainer/ItemMenuContainer/Use"]
+[editable path="UIController/InventoryContainer/ItemMenuContainer/Move"]
+[editable path="UIController/InventoryContainer/ItemMenuContainer/EquipUnequip"]
+[editable path="UIController/InventoryContainer/ItemMenuContainer/Drop"]
+[editable path="UIController/InventoryContainer/PlayerContainer/Player1"]

@@ -18,6 +18,9 @@ export var statistics = {
 	"Vitality": 0
 }
 
+export var armor : Resource = null
+export var weapon : Resource = null
+
 enum actions {ATTACK, DEFEND, SKILL}
 
 func setMaxMana(value):

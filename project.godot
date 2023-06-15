@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "PartyMember",
 "language": "GDScript",
 "path": "res://Player/PartyMemberTemplate.gd"
+}, {
+"base": "Resource",
+"class": "itemTemplate",
+"language": "GDScript",
+"path": "res://Inventory/itemTemplate.gd"
 } ]
 _global_script_class_icons={
-"PartyMember": ""
+"PartyMember": "",
+"itemTemplate": ""
 }
 
 [application]

@@ -11,6 +11,7 @@ var inventory: bool = false
 func _ready():
 	SignalBus.connect("dialog_start", self, "startDialog")
 	
+	
 func openInventory():
 	buffer = true
 	worldController.pauseGame()
