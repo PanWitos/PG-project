@@ -4,6 +4,8 @@ var questList: Array
 var finishedQuests: Array
 
 func addQuest(quest: Resource):
+	if quest in finishedQuests:
+		return
 	questList.append(quest)
 	
 func removeQuest(id):
