@@ -1,15 +1,25 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Controllers/TurnQueue.gd" type="Script" id=1]
 [ext_resource path="res://Controllers/BattleController.gd" type="Script" id=2]
 [ext_resource path="res://Assets/ARCADECLASSIC.TTF" type="DynamicFontData" id=3]
 [ext_resource path="res://Controllers/Menu.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Textures/battle_scene_factory.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 3 )
 
 [node name="BattleController" type="Node"]
 script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 208.0
+margin_top = 161.0
+margin_right = 592.0
+margin_bottom = 449.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 5
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 400, 300 )

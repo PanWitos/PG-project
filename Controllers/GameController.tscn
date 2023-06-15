@@ -57,6 +57,77 @@ render_target_update_mode = 0
 
 [node name="BattleController" parent="UIController/BattleViewport/Viewport" instance=ExtResource( 3 )]
 
+[node name="Border" type="Control" parent="UIController/BattleViewport"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="LU" type="TextureRect" parent="UIController/BattleViewport/Border"]
+margin_left = -9.0
+margin_top = -9.0
+margin_right = 55.0
+margin_bottom = 55.0
+texture = ExtResource( 4 )
+
+[node name="LD" type="TextureRect" parent="UIController/BattleViewport/Border"]
+margin_left = -9.0
+margin_top = 445.0
+margin_right = 55.0
+margin_bottom = 509.0
+texture = ExtResource( 4 )
+flip_v = true
+
+[node name="RU" type="TextureRect" parent="UIController/BattleViewport/Border"]
+margin_left = 645.0
+margin_top = -9.0
+margin_right = 709.0
+margin_bottom = 55.0
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="RD" type="TextureRect" parent="UIController/BattleViewport/Border"]
+margin_left = 645.0
+margin_top = 445.0
+margin_right = 709.0
+margin_bottom = 509.0
+texture = ExtResource( 4 )
+flip_h = true
+flip_v = true
+
+[node name="border" type="TextureRect" parent="UIController/BattleViewport/Border"]
+margin_left = 55.0
+margin_top = -9.0
+margin_right = 645.0
+texture = ExtResource( 5 )
+stretch_mode = 2
+
+[node name="border2" type="TextureRect" parent="UIController/BattleViewport/Border"]
+margin_left = 55.0
+margin_top = 500.0
+margin_right = 645.0
+margin_bottom = 509.0
+texture = ExtResource( 5 )
+stretch_mode = 2
+flip_h = true
+flip_v = true
+
+[node name="border3" type="TextureRect" parent="UIController/BattleViewport/Border"]
+margin_top = 55.0
+margin_right = 402.0
+margin_bottom = 64.0
+rect_rotation = 90.0
+texture = ExtResource( 5 )
+stretch_mode = 2
+flip_v = true
+
+[node name="border4" type="TextureRect" parent="UIController/BattleViewport/Border"]
+margin_left = 709.0
+margin_top = 55.0
+margin_right = 1111.0
+margin_bottom = 64.0
+rect_rotation = 90.0
+texture = ExtResource( 5 )
+stretch_mode = 2
+
 [node name="DialogBox" type="Panel" parent="UIController"]
 process_priority = 1
 visible = false
@@ -376,6 +447,77 @@ margin_left = 134.0
 margin_top = 164.0
 margin_right = 264.0
 margin_bottom = 324.0
+
+[node name="Border" type="Control" parent="UIController/InventoryContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="LU" type="TextureRect" parent="UIController/InventoryContainer/Border"]
+margin_left = -9.0
+margin_top = -9.0
+margin_right = 55.0
+margin_bottom = 55.0
+texture = ExtResource( 4 )
+
+[node name="LD" type="TextureRect" parent="UIController/InventoryContainer/Border"]
+margin_left = -9.0
+margin_top = 316.0
+margin_right = 55.0
+margin_bottom = 380.0
+texture = ExtResource( 4 )
+flip_v = true
+
+[node name="RU" type="TextureRect" parent="UIController/InventoryContainer/Border"]
+margin_left = 496.0
+margin_top = -9.0
+margin_right = 560.0
+margin_bottom = 55.0
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="RD" type="TextureRect" parent="UIController/InventoryContainer/Border"]
+margin_left = 496.0
+margin_top = 316.0
+margin_right = 560.0
+margin_bottom = 380.0
+texture = ExtResource( 4 )
+flip_h = true
+flip_v = true
+
+[node name="border" type="TextureRect" parent="UIController/InventoryContainer/Border"]
+margin_left = 55.0
+margin_top = -9.0
+margin_right = 496.0
+texture = ExtResource( 5 )
+stretch_mode = 2
+
+[node name="border2" type="TextureRect" parent="UIController/InventoryContainer/Border"]
+margin_left = 55.0
+margin_top = 371.0
+margin_right = 496.0
+margin_bottom = 380.0
+texture = ExtResource( 5 )
+stretch_mode = 2
+flip_h = true
+flip_v = true
+
+[node name="border3" type="TextureRect" parent="UIController/InventoryContainer/Border"]
+margin_top = 55.0
+margin_right = 261.0
+margin_bottom = 64.0
+rect_rotation = 90.0
+texture = ExtResource( 5 )
+stretch_mode = 2
+flip_v = true
+
+[node name="border4" type="TextureRect" parent="UIController/InventoryContainer/Border"]
+margin_left = 560.0
+margin_top = 55.0
+margin_right = 821.0
+margin_bottom = 64.0
+rect_rotation = 90.0
+texture = ExtResource( 5 )
+stretch_mode = 2
 
 [node name="BufferTimer" type="Timer" parent="."]
 wait_time = 0.1

@@ -7,7 +7,7 @@ onready var turnQueue = get_node("TurnQueue")
 onready var menu = get_node("Menu")
 
 var heroPositions = [Vector2(-130, 80), Vector2(-65, 80), Vector2(0, 80), Vector2(65, 80), Vector2(130, 80)]
-var enemyPositions = [Vector2(-100, -50), Vector2(0, -50), Vector2(100, -50)]
+var enemyPositions = [Vector2(-100, 0), Vector2(0, -50), Vector2(100, 0)]
 
 var active: bool = false
 var targeting: bool = false
