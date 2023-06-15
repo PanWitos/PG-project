@@ -19,23 +19,26 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Player/PartyMemberTemplate.gd"
 }, {
+"base": "Resource",
+"class": "itemTemplate",
+"language": "GDScript",
+"path": "res://Inventory/itemTemplate.gd"
+}, {
 "base": "Node2D",
 "class": "TurnQueue",
 "language": "GDScript",
 "path": "res://Controllers/TurnQueue.gd"
-} ]
-_global_script_class_icons={
-"Enemy": "",
-"PartyMember": "",
-"TurnQueue": ""
+}, {
 "base": "Resource",
 "class": "questTemplate",
 "language": "GDScript",
 "path": "res://Quests/questTemplate.gd"
 } ]
+
 _global_script_class_icons={
 "PartyMember": "",
-"questTemplate": ""
+"questTemplate": "",
+"itemTemplate": ""
 }
 
 [application]

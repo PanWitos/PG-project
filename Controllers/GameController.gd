@@ -18,6 +18,7 @@ func _ready():
 	SignalBus.connect("battle_start", self, "startBattle")
 	SignalBus.connect("battle_end", self, "endBattle")
 	
+	
 func openInventory():
 	buffer = true
 	worldController.pauseGame()

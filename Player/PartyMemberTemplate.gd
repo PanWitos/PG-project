@@ -18,7 +18,11 @@ export var statistics = {
 	"Vitality": 0
 }
 
+export var armor : Resource = null
+export var weapon : Resource = null
+
 export var dead: bool = false
+
 
 enum actions {ATTACK, DEFEND, SKILL}
 
