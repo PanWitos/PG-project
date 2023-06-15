@@ -66,11 +66,21 @@ func getName():
 	return characterName
 
 func getDamage():
-	var damage = statistics["Strength"] * 10
+	var damage
+	if weapon != null:
+		damage = statistics["Strength"] * 10 + weapon.itemPower
+	else:
+		damage = statistics["Strength"] * 10
 	return damage
 	
 func getHit(damage):
-	currentHealth -= damage
+	if armor != null:
+		var newDamage = (damage - armor.itemPower)
+		if newDamage < 0:
+			newDamage = 0
+		currentHealth -= newDamage
+	else:
+		currentHealth -= damage
 	print(currentHealth)
 
 func checkHealth():
@@ -87,6 +97,11 @@ func levelUp():
 	for statistic in statistics:
 		statistics[statistic] += 1
 
+func equipArmor(newArmor):
+	armor = newArmor
+	
+func equipWeapon(newWeapon):
+	weapon = newWeapon
 
 func getInitiative():
 	var initiative = statistics["Agility"] * 10 + randi()%7 + 1

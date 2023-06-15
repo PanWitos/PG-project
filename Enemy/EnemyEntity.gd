@@ -11,7 +11,7 @@ export var statistics: Resource
 func play_turn():
 	active = true
 	selected()
-	yield(get_tree().create_timer(0.2), "timeout")
+	yield(get_tree().create_timer(1), "timeout")
 	performAction()
 	print(statistics.enemyName)
 	return self
@@ -19,6 +19,7 @@ func play_turn():
 func performAction():
 	if active:
 		var player = Party.getRandAliveMember()
+		print(player)
 		player.getHit(2)
 		active = false
 		unselected()

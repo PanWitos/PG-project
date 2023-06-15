@@ -9,4 +9,5 @@ id = 1
 name = "health potion"
 itemPower = 0
 itemType = "Usable"
+equiped = false
 texture = ExtResource( 2 )
