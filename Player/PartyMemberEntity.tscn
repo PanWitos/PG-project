@@ -2,5 +2,13 @@
 
 [ext_resource path="res://Player/PartyMemberEntity.gd" type="Script" id=1]
 
-[node name="PartyMemberEntity" type="Sprite"]
+[node name="PartyMemberEntity" type="Sprite" groups=["BattlePlayer"]]
 script = ExtResource( 1 )
+
+[node name="Selector" type="ColorRect" parent="."]
+visible = false
+show_behind_parent = true
+margin_left = -18.0
+margin_top = -18.0
+margin_right = 18.0
+margin_bottom = 18.0

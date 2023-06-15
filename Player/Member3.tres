@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-characterName = "Aragorn"
+characterName = "Member3"
 maxHealth = 5
 currentHealth = 0
 maxMana = 0

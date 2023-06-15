@@ -10,15 +10,19 @@ export var statistics: Resource
 
 func play_turn():
 	active = true
+	selected()
+	yield(get_tree().create_timer(0.2), "timeout")
+	performAction()
 	print(statistics.enemyName)
 	return self
 	
-func _unhandled_input(event):
+func performAction():
 	if active:
-		if event.is_action_pressed("complete"):
-			active = false
-			emit_signal("completed")
-			
+		var player = Party.getRandAliveMember()
+		player.getHit(2)
+		active = false
+		unselected()
+		emit_signal("completed")
 			
 func selected():
 	selector.visible = true
@@ -30,4 +34,7 @@ func getHit(damage):
 	statistics.currentHealth -= damage
 	if statistics.currentHealth <= 0:
 		queue_free()
+
+func getInitiative():
+	return statistics.getInitiative()
 	

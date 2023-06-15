@@ -6,7 +6,8 @@
 [ext_resource path="res://Assets/Textures/stonebricks.png" type="Texture" id=4]
 [ext_resource path="res://Controllers/WorldController.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Textures/grass1.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Textures/test_rat.png" type="Texture" id=7]
+[ext_resource path="res://Enemy/EnemyInstance.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Textures/test_rat.png" type="Texture" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -66,9 +67,6 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 extents = Vector2( 16, 16 )
 
 [sub_resource type="RectangleShape2D" id=4]
-
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 14, 14 )
 
 [node name="WorldController" type="Node"]
 script = ExtResource( 5 )
@@ -552,15 +550,23 @@ texture = ExtResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="walls/wall5"]
 shape = SubResource( 4 )
 
-[node name="EnemyTest" type="StaticBody2D" parent="." groups=["ENEMY"]]
-position = Vector2( 176, 240 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="EnemyInstance" parent="." instance=ExtResource( 7 )]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyTest"]
-shape = SubResource( 5 )
+[node name="Sprite" parent="EnemyInstance" index="1"]
+texture = ExtResource( 8 )
 
-[node name="Sprite" type="Sprite" parent="EnemyTest"]
-scale = Vector2( -1, 1 )
-texture = ExtResource( 7 )
+[node name="EnemyInstance2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 240, 240 )
+
+[node name="Sprite" parent="EnemyInstance2" index="1"]
+texture = ExtResource( 8 )
+
+[node name="EnemyInstance3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 304, 240 )
+
+[node name="Sprite" parent="EnemyInstance3" index="1"]
+texture = ExtResource( 8 )
+
+[editable path="EnemyInstance"]
+[editable path="EnemyInstance2"]
+[editable path="EnemyInstance3"]

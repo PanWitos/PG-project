@@ -11,6 +11,8 @@ var buffer: bool = false
 var inventory: bool = false
 var battle: bool = false
 
+var currentEnemy = null
+
 func _ready():
 	SignalBus.connect("dialog_start", self, "startDialog")
 	SignalBus.connect("battle_start", self, "startBattle")
@@ -35,9 +37,10 @@ func startDialog():
 	bufferTimer.start()
 	dialog = true
 
-func startBattle():
+func startBattle(enemy):
 	if battle != true:
 		battle = true
+		currentEnemy = enemy
 		worldController.pauseGame()
 		battleViewport.visible = true
 		battleController.startBattle()
@@ -47,6 +50,7 @@ func endBattle():
 		battleController.endBattle()
 		battle = false
 		worldController.unpaudeGame()
+		currentEnemy.enemyDestroy()
 		battleViewport.visible = false
 
 func endDialog():

@@ -5,7 +5,6 @@ signal actionExecuted
 
 onready var turnQueue = get_node("TurnQueue")
 onready var menu = get_node("Menu")
-onready var heroes = [Party.member1, Party.member2]
 
 var heroPositions = [Vector2(-130, 80), Vector2(-65, 80), Vector2(0, 80), Vector2(65, 80), Vector2(130, 80)]
 var enemyPositions = [Vector2(-100, -50), Vector2(0, -50), Vector2(100, -50)]
@@ -58,13 +57,17 @@ func startBattle():
 	for i in 4:
 		var heroInstance = heroScene.instance()
 		heroInstance.texture = load('res://Player/whatever.png')
-		heroInstance.statistics = load('res://Player/Aragorn.tres')
-		heroInstance.position = heroPositions[i]
-		turnQueue.add_child(heroInstance)
+		heroInstance.memberId = i
+		if Party.members[heroInstance.memberId].dead == false:
+			heroInstance.position = heroPositions[i]
+			turnQueue.add_child(heroInstance)
 	
 	turnQueue.initialize()
 
 func endBattle():
+	var children = turnQueue.get_children()
+	for child in children:
+		child.queue_free()
 	active = false
 	targeting = false
 	targetEnemy = 0

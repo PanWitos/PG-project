@@ -33,7 +33,7 @@ func move(dir):
 	ray.force_raycast_update()
 	if ray.is_colliding() and ray.get_collider().is_in_group("ENEMY"):
 		print("battle start!")
-		SignalBus.emit_signal("battle_start")
+		SignalBus.emit_signal("battle_start", ray.get_collider())
 	if !ray.is_colliding():
 #		position += dir * tile_size
 		move_tween(dir)

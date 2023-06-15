@@ -5,7 +5,7 @@ class_name PartyMember
 export var characterName: String
 
 export var maxHealth: int setget setMaxHealth, getMaxHealth
-var currentHealth: int setget setCurrentHealth, getCurrentHealth
+export var currentHealth: int setget setCurrentHealth, getCurrentHealth
 
 export var maxMana: int = 0 setget setMaxMana, getMaxMana
 var currentMana: int = 0 setget setCurrentMana, getCurrentMana
@@ -17,6 +17,8 @@ export var statistics = {
 	"Wisdom": 0,
 	"Vitality": 0
 }
+
+export var dead: bool = false
 
 enum actions {ATTACK, DEFEND, SKILL}
 
@@ -58,7 +60,15 @@ func getName():
 func getDamage():
 	var damage = statistics["Strength"] * 10
 	return damage
+	
+func getHit(damage):
+	currentHealth -= damage
+	print(currentHealth)
+
+func checkHealth():
+	if currentHealth <= 0:
+		dead = true
 
 func getInitiative():
 	var initiative = statistics["Agility"] * 10 + randi()%7 + 1
-	return initiative
+	return statistics["Agility"]
