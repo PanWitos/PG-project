@@ -56,7 +56,7 @@ func startBattle():
 	
 	for i in 4:
 		var heroInstance = heroScene.instance()
-		heroInstance.texture = load('res://Player/whatever.png')
+		heroInstance.texture = load("res://Player/p" + String(i+1) + ".png")
 		heroInstance.memberId = i
 		if Party.members[heroInstance.memberId].dead == false:
 			heroInstance.position = heroPositions[i]
