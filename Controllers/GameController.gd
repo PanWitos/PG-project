@@ -46,8 +46,9 @@ func startBattle(enemy):
 		battleViewport.visible = true
 		battleController.startBattle()
 		
-func endBattle():
+func endBattle(enemiesExp):
 	if battle:
+		Party.gainExperience(enemiesExp)
 		battleController.endBattle()
 		battle = false
 		worldController.unpaudeGame()

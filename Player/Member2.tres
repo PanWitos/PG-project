@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource( 1 )
-characterName = "Aragorn"
-maxHealth = 5
+characterName = "Member2"
+maxHealth = 10
 currentHealth = 0
 maxMana = 0
 statistics = {
@@ -15,4 +15,7 @@ statistics = {
 "Vitality": 1,
 "Wisdom": 1
 }
+experience = 0
+level = 0
+experienceRates = [ 250, 500, 1000, 2000 ]
 dead = false

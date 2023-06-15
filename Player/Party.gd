@@ -3,8 +3,8 @@ extends Node
 var members
 
 func _ready():
-	var member1 = load("res://Player/Aragorn.tres")
-	var member2 = load("res://Player/Boromir.tres")
+	var member1 = load("res://Player/Member1.tres")
+	var member2 = load("res://Player/Member2.tres")
 	var member3 = load("res://Player/Member3.tres")
 	var member4 = load("res://Player/Member4.tres")
 	members = [member1, member2, member3, member4]
@@ -27,3 +27,11 @@ func getRandAliveMember():
 	var index = int(rand_range(0, aliveMembers.size()))
 	
 	return aliveMembers[int(rand_range(0, aliveMembers.size()))]
+	
+func gainExperience(enemiesExp):
+	var expSum = 0
+	for experience in enemiesExp:
+		expSum += experience
+		
+	for member in members:
+		member.gainExperience(expSum)

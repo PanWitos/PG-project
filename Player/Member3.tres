@@ -15,4 +15,7 @@ statistics = {
 "Vitality": 1,
 "Wisdom": 1
 }
+experience = 0
+level = 0
+experienceRates = [ 250, 500, 1000, 2000 ]
 dead = false

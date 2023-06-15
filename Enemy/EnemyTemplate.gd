@@ -14,6 +14,8 @@ var currentMana: int = 0 setget setCurrentMana, getCurrentMana
 
 export var id: int
 
+export var experienceGiven:int = 0
+
 export var statistics = {
 	"Strength" : 0,
 	"Accuracy" : 0,
