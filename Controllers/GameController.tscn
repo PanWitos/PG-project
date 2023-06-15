@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Controllers/WorldController.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Controllers/GameController.gd" type="Script" id=2]
@@ -6,9 +6,12 @@
 [ext_resource path="res://Assets/UI/border1.png" type="Texture" id=4]
 [ext_resource path="res://Assets/UI/border2.png" type="Texture" id=5]
 [ext_resource path="res://Controllers/UIController.gd" type="Script" id=6]
+[ext_resource path="res://Player/p3.png" type="Texture" id=7]
 [ext_resource path="res://Inventory/Slot.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Inventory/MenuButton.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Player/p2.png" type="Texture" id=10]
 [ext_resource path="res://Inventory/PlayerSlot.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Player/p4.png" type="Texture" id=12]
 [ext_resource path="res://Inventory/InventoryContainer.gd" type="Script" id=14]
 
 [sub_resource type="DynamicFontData" id=1]
@@ -219,7 +222,6 @@ text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis ve
 scroll_active = false
 
 [node name="InventoryContainer" type="ColorRect" parent="UIController"]
-visible = false
 margin_left = 113.0
 margin_top = 37.0
 margin_right = 664.0
@@ -434,19 +436,44 @@ columns = 2
 
 [node name="Player1" parent="UIController/InventoryContainer/PlayerContainer" instance=ExtResource( 11 )]
 
+[node name="PlayerName" parent="UIController/InventoryContainer/PlayerContainer/Player1" index="0"]
+bbcode_text = "[center]player1"
+text = "player1"
+
 [node name="Player2" parent="UIController/InventoryContainer/PlayerContainer" instance=ExtResource( 11 )]
 margin_left = 134.0
 margin_right = 264.0
 
+[node name="PlayerName" parent="UIController/InventoryContainer/PlayerContainer/Player2" index="0"]
+bbcode_text = "[center]player2"
+text = "player2"
+
+[node name="TextureRect" parent="UIController/InventoryContainer/PlayerContainer/Player2" index="3"]
+texture = ExtResource( 10 )
+
 [node name="Player3" parent="UIController/InventoryContainer/PlayerContainer" instance=ExtResource( 11 )]
 margin_top = 164.0
 margin_bottom = 324.0
+
+[node name="PlayerName" parent="UIController/InventoryContainer/PlayerContainer/Player3" index="0"]
+bbcode_text = "[center]player3"
+text = "player3"
+
+[node name="TextureRect" parent="UIController/InventoryContainer/PlayerContainer/Player3" index="3"]
+texture = ExtResource( 7 )
 
 [node name="Player4" parent="UIController/InventoryContainer/PlayerContainer" instance=ExtResource( 11 )]
 margin_left = 134.0
 margin_top = 164.0
 margin_right = 264.0
 margin_bottom = 324.0
+
+[node name="PlayerName" parent="UIController/InventoryContainer/PlayerContainer/Player4" index="0"]
+bbcode_text = "[center]player4"
+text = "player4"
+
+[node name="TextureRect" parent="UIController/InventoryContainer/PlayerContainer/Player4" index="3"]
+texture = ExtResource( 12 )
 
 [node name="Border" type="Control" parent="UIController/InventoryContainer"]
 margin_right = 40.0
@@ -530,3 +557,6 @@ wait_time = 0.1
 [editable path="UIController/InventoryContainer/ItemMenuContainer/EquipUnequip"]
 [editable path="UIController/InventoryContainer/ItemMenuContainer/Drop"]
 [editable path="UIController/InventoryContainer/PlayerContainer/Player1"]
+[editable path="UIController/InventoryContainer/PlayerContainer/Player2"]
+[editable path="UIController/InventoryContainer/PlayerContainer/Player3"]
+[editable path="UIController/InventoryContainer/PlayerContainer/Player4"]
