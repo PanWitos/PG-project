@@ -6,14 +6,10 @@
 [ext_resource path="res://Assets/UI/border1.png" type="Texture" id=4]
 [ext_resource path="res://Assets/UI/border2.png" type="Texture" id=5]
 [ext_resource path="res://Controllers/UIController.gd" type="Script" id=6]
-[ext_resource path="res://Controllers/DialogBox.gd" type="Script" id=7]
 [ext_resource path="res://Inventory/Slot.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Inventory/MenuButton.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Inventory/InventoryContainer.gd" type="Script" id=10]
 [ext_resource path="res://Inventory/PlayerSlot.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Assets/UI/item_slot_default_background.png" type="Texture" id=8]
-[ext_resource path="res://Controllers/Slot.gd" type="Script" id=9]
-[ext_resource path="res://InventoryContainer.gd" type="Script" id=10]
+[ext_resource path="res://Inventory/InventoryContainer.gd" type="Script" id=14]
 
 [sub_resource type="DynamicFontData" id=1]
 antialiased = false
@@ -152,12 +148,13 @@ text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis ve
 scroll_active = false
 
 [node name="InventoryContainer" type="ColorRect" parent="UIController"]
+visible = false
 margin_left = 113.0
 margin_top = 37.0
 margin_right = 664.0
 margin_bottom = 408.0
 color = Color( 0.207843, 0.203922, 0.203922, 1 )
-script = ExtResource( 10 )
+script = ExtResource( 14 )
 
 [node name="InventoryContainer" type="GridContainer" parent="UIController/InventoryContainer"]
 margin_left = 347.0
@@ -385,9 +382,9 @@ wait_time = 0.1
 
 [connection signal="timeout" from="BufferTimer" to="." method="_on_BufferTimer_timeout"]
 
+[editable path="UIController/BattleViewport/Viewport/BattleController"]
 [editable path="UIController/InventoryContainer/ItemMenuContainer/Use"]
 [editable path="UIController/InventoryContainer/ItemMenuContainer/Move"]
 [editable path="UIController/InventoryContainer/ItemMenuContainer/EquipUnequip"]
 [editable path="UIController/InventoryContainer/ItemMenuContainer/Drop"]
 [editable path="UIController/InventoryContainer/PlayerContainer/Player1"]
-[editable path="UIController/BattleViewport/Viewport/BattleController"]
