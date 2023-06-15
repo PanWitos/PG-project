@@ -413,3 +413,5 @@ script = ExtResource( 9 )
 wait_time = 0.1
 
 [connection signal="timeout" from="BufferTimer" to="." method="_on_BufferTimer_timeout"]
+
+[editable path="UIController/BattleViewport/Viewport/BattleController"]
