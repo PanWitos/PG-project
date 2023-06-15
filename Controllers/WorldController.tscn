@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Textures/grass-tile.jpg" type="Texture" id=1]
 [ext_resource path="res://Player/PartyEntity.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://Controllers/WorldController.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Textures/grass1.png" type="Texture" id=6]
 [ext_resource path="res://NPC/npcCharacter.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Assets/Textures/test_rat.png" type="Texture" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -85,6 +84,19 @@ firstDialog = "siema eniu"
 secondDialog = "dobry"
 
 [node name="Sprite" parent="npcCharacter" index="0"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+
+[node name="npcCharacter2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 528, 240 )
+__meta__ = {
+"_edit_group_": true
+}
+id = 2
+firstDialog = "Nie mam nic wiecej do powiedzenia"
+secondDialog = "Dziekuje za przybycie"
+
+[node name="Sprite" parent="npcCharacter2" index="0"]
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
 
@@ -545,38 +557,5 @@ texture = ExtResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="walls/wall5"]
 shape = SubResource( 4 )
 
-[node name="EnemyInstance" parent="." instance=ExtResource( 7 )]
-
-[node name="Sprite" parent="EnemyInstance" index="0"]
-texture = ExtResource( 8 )
-
-[node name="EnemyInstance2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 240, 240 )
-
-[node name="Sprite" parent="EnemyInstance2" index="0"]
-texture = ExtResource( 8 )
-
-[node name="EnemyInstance3" parent="." instance=ExtResource( 7 )]
-position = Vector2( 304, 240 )
-
-[node name="Sprite" parent="EnemyInstance3" index="0"]
-texture = ExtResource( 8 )
-
-[node name="npcCharacter2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 528, 240 )
-__meta__ = {
-"_edit_group_": true
-}
-id = 2
-firstDialog = "Nie mam nic wiecej do powiedzenia"
-secondDialog = "Dziekuje za przybycie"
-
-[node name="Sprite" parent="npcCharacter2" index="0"]
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 3 )
-
 [editable path="npcCharacter"]
-[editable path="EnemyInstance"]
-[editable path="EnemyInstance2"]
-[editable path="EnemyInstance3"]
 [editable path="npcCharacter2"]
